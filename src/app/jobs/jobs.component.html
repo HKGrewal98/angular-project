@@ -1,0 +1,15 @@
+<header class="header">
+    <h1>Ottomons</h1>
+</header>
+<h2>Jobs</h2>
+<article class="event" *ngFor="let job of jobs">
+    <img src={{job.imageUrl}} alt="image"/>
+    <h1>{{job.title}}</h1>
+    <time>Date Posted : {{job.postedDate}}</time>
+    <p>Description: {{job.description}}</p>
+    <menu class="actions">
+      <button type="button">Apply</button>
+    </menu>
+</article>
+
+
