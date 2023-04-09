@@ -1,17 +1,1 @@
-<div *ngIf="!isUserLogined">
-  <app-login></app-login>
-</div>
-<div *ngIf="isUserLogined">
-    <app-header (openCart)="enableCart($event)" [itemsCountMap]="itemsCountMap"></app-header>
-    <app-meals (newItemEvent)="addItem($event)" [itemsCountMap]="itemsCountMap"></app-meals>
-    <div *ngIf="openCart">
-        <app-cart (closeCart)="enableCart($event)" 
-                 [cartItems]="cartItems"
-                 [itemsCountMap]="itemsCountMap" 
-                 [totalAmount]="totalAmount"
-                 (addItem)="addItem($event)"
-                 (removeItem)="deleteItem($event)"
-                 (orderAddress)="setUserAddress($event)">
-        </app-cart>
-    </div>
-</div>
+<router-outlet></router-outlet>

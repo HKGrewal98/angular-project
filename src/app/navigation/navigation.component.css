@@ -1,0 +1,23 @@
+.header_nav {
+    max-width: 60rem;
+    margin: auto;
+    padding: 2 rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul li{
+    display: inline;
+    margin: 10px;
+    font-size:large;
+ 
+  }
+  
+  a{
+    cursor: pointer;
+  }
+
+  .routeActive {
+    color: rgb(215, 234, 8);
+    text-decoration: underline;
+  }

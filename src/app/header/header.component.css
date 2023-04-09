@@ -24,7 +24,7 @@
   .main-image img {
     width: 110%;
     height: 100%;
-    object-fit: cover;
+    object-fit:inherit;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
   }
 

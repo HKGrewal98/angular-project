@@ -1,3 +1,7 @@
+.back{
+background-color: rgba(198, 182, 182, 0.808);
+}
+
 .card {
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);

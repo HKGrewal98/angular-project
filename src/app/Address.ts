@@ -1,6 +1,6 @@
 export interface Address{
     houseNo: string,
     street : string,
-    postalCode : string,
+    postal : string,
     city : string
 }

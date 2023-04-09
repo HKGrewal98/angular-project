@@ -53,16 +53,16 @@
         
             <div class="control">
               <label htmlFor="postal">Postal Code</label>
-              <input type="text"id="postal" placeholder="Postal Code"  formControlName="postalCode"  />
+              <input type="text"id="postal" placeholder="Postal Code"  formControlName="postal"  />
             </div>
 
-            <div *ngIf="(postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)) && (postalCode?.errors?.['required'])">
+            <div *ngIf="(postal?.invalid && (postal?.dirty || postal?.touched)) && (postal?.errors?.['required'])">
               <b style="color:red">Postal Code is required.</b>
             </div>
-            <div *ngIf="(postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)) && (postalCode?.errors?.['maxlength'])">
+            <div *ngIf="(postal?.invalid && (postal?.dirty || postal?.touched)) && (postal?.errors?.['maxlength'])">
               <b style="color:red">Postal Code max length is 7.</b>
             </div>
-            <div *ngIf="(postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)) && (postalCode?.errors?.['minlength'])">
+            <div *ngIf="(postal?.invalid && (postal?.dirty || postal?.touched)) && (postal?.errors?.['minlength'])">
               <b style="color:red">Postal Code min length is 6.</b>
             </div>
         

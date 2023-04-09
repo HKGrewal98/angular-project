@@ -13,14 +13,14 @@ export class CartComponent {
   @Output() closeCart = new EventEmitter<boolean>()
   @Output() addItem = new EventEmitter<Meal>()
   @Output() removeItem = new EventEmitter<Meal>()
-  @Output() orderAddress = new EventEmitter<Address>()
+  @Output() orderAddress = new EventEmitter<any>()
   @Input()  cartItems :Array<Meal> = []
   @Input()  totalAmount :number = 0
   @Input()  itemsCountMap :Array<{_id:string,count:number}> = []
   userAddress = new FormGroup({
     houseNo:new FormControl('',[Validators.required]),
     street:new FormControl('',[Validators.required]),
-    postalCode : new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(7)]),
+    postal : new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(7)]),
     city: new FormControl('',[Validators.required])
   })
   confirmOrder = false
@@ -56,7 +56,7 @@ export class CartComponent {
   userAddressSubmit(){
     console.log(this.userAddress.value)
     //this.disableCart(false)
-    //this.orderAddress.emit(data)
+    this.orderAddress.emit(this.userAddress.value)
   }
   
   get houseNo() {
@@ -67,8 +67,8 @@ export class CartComponent {
     return this.userAddress.get('street')
   }
 
-  get postalCode(){
-    return this.userAddress.get('postalCode')
+  get postal(){
+    return this.userAddress.get('postal')
   }
 
   get city(){

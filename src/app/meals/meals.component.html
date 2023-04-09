@@ -1,4 +1,12 @@
-<section class="summary">
+<app-header [itemsCountMap]="itemsCountMap" (openCart)="enableCart($event)"></app-header>
+<div *ngIf="openCart">
+    <app-cart  [cartItems]="cartItems" [totalAmount]="totalAmount" [itemsCountMap]="itemsCountMap"
+    (addItem)="addItem($event)" (removeItem)="deleteItem($event)" (orderAddress)="setUserAddress($event)"
+    (closeCart)="enableCart($event)" (orderAddress)="setUserAddress($event)" ></app-cart>
+</div>
+
+<div class="back">
+  <section class="summary">
     <h2>Delicious Food, Delivered To You</h2>
     <p>
       Choose your favorite meal from our broad selection of available meals
@@ -11,7 +19,7 @@
   </section>
 <section class="meals">
    <div class="card">
-    <ul *ngFor="let item of meal">
+    <ul *ngFor="let item of menuItems">
            <li class="meal">
                 <div>
                     <h3>{{item.name}}</h3>
@@ -32,3 +40,4 @@
    </div>
 </section>
 
+</div>
