@@ -1,0 +1,67 @@
+<header class="header">
+  <h1>Ottomons</h1>
+ <div class="jobsNav">
+       <app-navigation></app-navigation>
+ </div>
+</header>
+<div class="container">
+  <div class="form-section">
+    <form class="review-form" (ngSubmit)="handleSubmit()">
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="name" name="name" required>
+      </label>
+      <br />
+      <label>
+        Rating:
+        <select [(ngModel)]="rating" name="rating" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Comment:
+        <textarea [(ngModel)]="message" name="message" required></textarea>
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="data-section">
+    <h2>Reviews :</h2>
+    <ul>
+      <li *ngFor="let review of reviews">
+        <p>
+          <span class="name">{{ review.name }}</span> 
+          <span *ngFor="let _ of getArray(review.rating).fill('')">★</span>
+          <span *ngFor="let _ of getArray(5 - review.rating).fill('')">☆</span>
+        </p>
+        <p>{{ review.message }}</p>
+      </li>
+    </ul>
+    <br />
+    <div class="ratings-table">
+      <h2>Ratings Summary:</h2><br />
+      <table>
+        <thead>
+          <tr>
+            <th>Ratings</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rating of ratingsTableRows">
+            <td class="star">
+              <span>{{ '\u2605'.repeat(rating.rating) }}{{ '\u2606'.repeat(5 - rating.rating) }}</span>
+            </td>
+            <td>{{ rating.count }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MealsComponent } from './meals/meals.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ReviewComponent } from './review/review.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -27,7 +29,9 @@ import { PaymentComponent } from './payment/payment.component';
     JobsComponent,
     NavigationComponent,
     LogoutComponent,
-    PaymentComponent
+    PaymentComponent,
+    ContactUsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { PaymentComponent } from './payment/payment.component';
     RouterModule.forRoot([
       {path:'ottomonMeals',component:MealsComponent,canActivate:[AuthguardGuard]},
       {path:'jobs',component:JobsComponent,canActivate:[AuthguardGuard]},
+      {path:'review',component:ReviewComponent,canActivate:[AuthguardGuard]},
+      {path:'contactus',component:ContactUsComponent,canActivate:[AuthguardGuard]},
       {path:'', component:LoginComponent,canActivate:[AuthguardGuard]},
       {path:'logout',component:LogoutComponent,canActivate:[AuthguardGuard]},
       {path:'payment',component:PaymentComponent,canActivate:[AuthguardGuard]},

@@ -1,0 +1,45 @@
+<header class="header">
+  <h1>Ottomons</h1>
+ <div class="jobsNav">
+       <app-navigation></app-navigation>
+ </div>
+</header>
+<div class="container">
+  <div class="contact-details">
+    <ng-container *ngIf="contactDetails">
+      <div>
+        <h2>Contact Us :-</h2><br/>
+        <p><strong>Address:</strong> {{contactDetails.address}}</p>
+        <p><strong>Phone:</strong> {{contactDetails.phone}}</p>
+        <p><strong>Email:</strong> {{contactDetails.email}}</p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!contactDetails">
+      <p>{{error ? 'Error: ' + error : 'Loading...'}}</p>
+    </ng-container>
+  </div> 
+ 
+  <div class="contact-form">
+    <form (ngSubmit)="contactForm.valid && onSubmit()" #contactForm="ngForm">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+      </div>
+      <div>
+        <label for="subject">Subject:</label>
+        <textarea id="subject" name="subject" [(ngModel)]="formData.subject"></textarea>
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" [(ngModel)]="formData.message"></textarea>
+      </div>
+      <div>
+        <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>  
+</div>
