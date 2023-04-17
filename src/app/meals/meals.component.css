@@ -83,6 +83,7 @@ background-color: rgba(198, 182, 182, 0.808);
   
   .meal h3 {
     margin: 0 0 0.25rem 0;
+    font-size: larger;
   }
   
   .description {

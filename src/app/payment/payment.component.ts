@@ -95,6 +95,7 @@ export class PaymentComponent {
         .subscribe(
           (response) => {
             console.log("Order placed succesfully");
+            window.alert("Order submitted successfully. Redirecting to the main Page.")
             this.route.navigateByUrl('/ottomonMeals');
           },
           (error) => {

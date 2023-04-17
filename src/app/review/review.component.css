@@ -37,7 +37,7 @@
   }
   
   .form-section {
-    flex-basis: 100%;
+    flex-basis: 75%;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
