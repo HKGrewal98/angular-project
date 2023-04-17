@@ -18,6 +18,9 @@ export class OrderService {
     console.log(data)
     this.user.next(data)
   }
+  getUser(){
+    return this.user.value;
+  }
  
   setOrderAmount(data: number){
     console.log(data)

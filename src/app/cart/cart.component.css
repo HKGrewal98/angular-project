@@ -1,4 +1,4 @@
-.backdrop {
+.cart_backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,13 +8,13 @@
     background-color: rgba(0, 0, 0, 0.75);
   }
   
-  .modal {
+  .cart_modal {
     position: absolute;
     height: calc(100% - 140px);
     overflow-y: auto;
     top: 15vh;
-    left: 5%;
-    width: 90%;
+    left: 25%;
+    width: 50%;
     background-color: white;
     padding: 1rem;
     border-radius: 14px;

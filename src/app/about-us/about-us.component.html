@@ -1,0 +1,12 @@
+<header class="header">
+  <h1>Ottomons</h1>
+ <div class="Nav">
+       <app-navigation></app-navigation>
+ </div>
+</header>
+<h2> About Us </h2>
+<div class="card aboutImage">
+    <div class="desc">
+      <p *ngFor="let content of contents" class="sub_desc">{{ content }}</p>
+    </div>
+  </div>

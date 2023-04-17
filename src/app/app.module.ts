@@ -17,7 +17,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AuthguardGuard } from './shared/authguard.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { PaymentComponent } from './payment/payment.component';
-
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { PaymentComponent } from './payment/payment.component';
     LogoutComponent,
     PaymentComponent,
     ContactUsComponent,
-    ReviewComponent
+    ReviewComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,99 @@
 <header class="header">
-    <h1>Ottomons</h1>
-   <div class="jobsNav">
-         <app-navigation></app-navigation>
-   </div>
+      <h1>Ottomons</h1>
+      <div class="jobsNav">
+            <app-navigation></app-navigation>
+      </div>
 </header>
+<div class="container w-50 p-0 body title formMargin">
+      <div class="card d-flex ">
+            <div class=" border border-dark m-4">
+                  <p class="h6 py-3 fs-2 mt-3 fw-bolder text-center">Payment Details</p>
+                  <form [formGroup]="paymentForm" class="row justify-content-center gx-3" (ngSubmit)="onSubmit()">
+                        <div class="col-10">
+                              <div class="d-flex flex-column">
+                                    <p class="text mb-1 fw-bold">Name:</p>
+                                    <input class="form-control mb-3" type="text" formControlName="name" />
+                                    <p style="color: #f30328; font-size: 10px"
+                                          *ngIf="paymentForm.get('name')?.touched && paymentForm.get('name')?.errors">
+                                          <span *ngIf="paymentForm.get('name')?.errors?.['required']">Name is
+                                                required.</span>
+                                          <span *ngIf="paymentForm.get('name')?.errors?.['pattern']">Name must contain
+                                                only the alphabetic
+                                                letters.</span>
+                                          <span *ngIf="paymentForm.get('name')?.errors?.['minlength']">Name must be at
+                                                least 4 letters
+                                                long.</span>
+                                    </p>
+                              </div>
+                        </div>
+                        <div class="col-10">
+                              <div class="d-flex flex-column">
+                                    <p class="text mb-1 fw-bold">Card Number:</p>
+                                    <input class="form-control mb-3" type="text" formControlName="cardNumber" />
+                                    <p style="color: #f30328; font-size: 10px"
+                                          *ngIf="paymentForm.get('cardNumber')?.touched && paymentForm.get('cardNumber')?.errors">
+                                          <span *ngIf="paymentForm.get('cardNumber')?.errors?.['required']">Card Number
+                                                is required.</span>
+                                          <span *ngIf="paymentForm.get('cardNumber')?.errors?.['pattern']">Card number
+                                                must contain all the
+                                                numbers.</span>
+                                          <span *ngIf="paymentForm.get('cardNumber')?.errors?.['minlength']">Card Number
+                                                length should be equal
+                                                to 16.</span>
+                                    </p>
+                              </div>
+                        </div>
+                        <div class="col-10">
+                              <div class="d-flex flex-column">
+                                    <p class="text mb-1 fw-bold">Expiry (MM/YY):</p>
+                                    <input class="form-control mb-3" type="text" formControlName="expiry"
+                                          placeholder="MM/YY" />
+                                    <p style="color: #f30328; font-size: 10px"
+                                          *ngIf="paymentForm.get('expiry')?.touched && paymentForm.get('expiry')?.errors">
+                                          <span *ngIf="paymentForm.get('expiry')?.errors?.['required']">Card Expiry is
+                                                required.</span>
+                                          <span *ngIf="paymentForm.get('expiry')?.errors?.['pattern']">Please specify
+                                                the card expiry in MM/YY
+                                                format.</span>
+                                    </p>
+                              </div>
+                        </div>
+                        <div class="col-10">
+                              <div class="d-flex flex-column">
+                                    <p class="text mb-1 fw-bold">CVV:</p>
+                                    <input class="form-control mb-3" type="password" formControlName="cvv"
+                                          placeholder="***" />
+                                    <p style="color: #f30328; font-size: 10px"
+                                          *ngIf="paymentForm.get('cvv')?.touched && paymentForm.get('cvv')?.errors">
+                                          <span *ngIf="paymentForm.get('cvv')?.errors?.['required']">CVV is
+                                                required.</span>
+                                          <span *ngIf="paymentForm.get('cvv')?.errors?.['pattern']">CVV number must
+                                                contain all the
+                                                numbers.</span>
+                                          <span *ngIf="paymentForm.get('cvv')?.errors?.['minlength']">CVV length should
+                                                be equal to 3.</span>
+                                    </p>
+                              </div>
+                        </div>
+
+                        <div class="col-10">
+                              <div class="d-flex flex-column">
+                                    <p class="text mb-1 fw-bold">Payment Mode: </p>
+                                    <select class="form-control mb-3" formControlName="paymentMode">
+                                          <option value="credit">Credit</option>
+                                          <option value="debit">Debit</option>
+                                          <option value="mastercard">Mastercard</option>
+                                    </select>
+                              </div>
+                        </div>
+
+                        <div class="col-10 text-end my-4">
+                              <button class="btn btn-primary btn-lg w-25 raised mb-3" type="submit"
+                                    [disabled]="!paymentForm.valid">
+                                    Submit
+                              </button>
+                        </div>
+                  </form>
+            </div>
+      </div>
+</div>
